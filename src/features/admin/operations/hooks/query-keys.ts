@@ -1,0 +1,16 @@
+export const adminOperationsKeys = {
+  all: ['admin-operations'] as const,
+  orders: () => [...adminOperationsKeys.all, 'orders'] as const,
+  orderList: (params: unknown) => [...adminOperationsKeys.orders(), 'list', params] as const,
+  order: (id: string) => [...adminOperationsKeys.orders(), 'detail', id] as const,
+  orderTimeline: (id: string) => [...adminOperationsKeys.orders(), id, 'timeline'] as const,
+  jastip: () => [...adminOperationsKeys.all, 'jastip'] as const,
+  jastipList: (params: unknown) => [...adminOperationsKeys.jastip(), 'list', params] as const,
+  jastipDetail: (id: string) => [...adminOperationsKeys.jastip(), 'detail', id] as const,
+  payments: () => [...adminOperationsKeys.all, 'payments'] as const,
+  paymentList: (params: unknown) => [...adminOperationsKeys.payments(), 'list', params] as const,
+  payment: (id: string) => [...adminOperationsKeys.payments(), 'detail', id] as const,
+  shipping: () => [...adminOperationsKeys.all, 'shipping'] as const,
+  shippingList: (params: unknown) => [...adminOperationsKeys.shipping(), 'list', params] as const,
+  shippingDetail: (id: string) => [...adminOperationsKeys.shipping(), 'detail', id] as const,
+};
