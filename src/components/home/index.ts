@@ -1,0 +1,10 @@
+export { HeroSection } from './hero-section';
+export { FeaturedCategories } from './featured-categories';
+export { FeaturedProducts } from './featured-products';
+export { BestSellers } from './best-sellers';
+export { NewArrivals } from './new-arrivals';
+export { JastipSection } from './jastip-section';
+export { WhyChooseUs } from './why-choose-us';
+export { TestimonialsSection } from './testimonials-section';
+export { FaqPreview } from './faq-preview';
+export { NewsletterSection } from './newsletter-section';

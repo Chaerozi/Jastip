@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Backgrounds - 80% Neutral */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    /* Cards & Popovers */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Primary - Brown Accent (5% usage) */
+    --primary: 25 35% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Neutral */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+
+    /* Muted - Neutral Gray */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent - Used sparingly */
+    --accent: 25 35% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive/Error */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs - 15% Neutral */
+    --border: 0 0% 93%;
+    --input: 0 0% 93%;
+    --ring: 25 35% 33%;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Charts */
+    --chart-1: 25 35% 33%;
+    --chart-2: 25 35% 55%;
+    --chart-3: 0 0% 60%;
+    --chart-4: 0 0% 45%;
+    --chart-5: 0 0% 75%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 25 35% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 93%;
+    --sidebar-ring: 25 35% 33%;
+  }
+
+  .dark {
+    /* Backgrounds - Dark neutral, NOT brown */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    /* Cards & Popovers */
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary - Brown Accent (only 5%) */
+    --primary: 25 35% 55%;
+    --primary-foreground: 0 0% 7%;
+
+    /* Secondary */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    /* Muted */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Accent */
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 95%;
+
+    /* Destructive */
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 25 35% 55%;
+
+    /* Charts */
+    --chart-1: 25 35% 55%;
+    --chart-2: 25 35% 33%;
+    --chart-3: 0 0% 60%;
+    --chart-4: 0 0% 70%;
+    --chart-5: 0 0% 50%;
+
+    /* Status Colors */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 7%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 25 35% 55%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 25 35% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  ::selection {
+    @apply bg-primary/10;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
